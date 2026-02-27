@@ -1,0 +1,166 @@
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
+
+type ProgramItem = {
+  title: string;
+  badge?: string;
+  icon: string;
+  descriptions: string[];
+  link: string;
+};
+
+const programs: ProgramItem[] = [
+  {
+    title: "Events",
+    badge: "NEW!",
+    icon: "/images/programs/Group-40249.png",
+    descriptions: [
+      "As one of the players in the industry, being dexterous and adaptive are keys. Generating and expanding networks has become one of our values, as lists of events and collaborations from our notable media and partners are displayed",
+    ],
+    link: "https://bolehdicoba.com/program/events/",
+  },
+  {
+    title: "Breakfast Club",
+    icon: "/images/programs/Group-40251.png",
+    descriptions: [
+      "“GOOD FOOD ENDS WITH GOOD TALK” - Geoffrey Neighor",
+      "We bring you one of the most relaxed yet productive sharing sessions during breakfast time. Curated and tasteful. Two words that would best describe this monthly program, a set of two-hour discussion with our selected group of guest lists.",
+      "No matter what you say over a cup of coffee and any preferred choice of croissants, it might lead to something bigger: network and collaboration.",
+    ],
+    link: "https://bolehdicoba.com/program/breakfast-club/",
+  },
+  {
+    title: "Bulletin Report by BDD",
+    icon: "/images/programs/Group-40252-1.png",
+    descriptions: [
+      "Throughout our journey in the industry since its establishment in 2017, we have encountered numerous challenges and collaborated with brands from various industries. As your growth partner, one of our main sources of satisfaction is acknowledgement that brands we work with are able to create and achieve the desired results.",
+      "We decided to share our two-cents in order to assist and give several trends and insights for business owners in understanding the industry better during a particular period of time.",
+    ],
+    link: "https://bolehdicoba.com/program/bulletin/",
+  },
+];
+
+export default function OurProgramSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  return (
+    <section className="px-4 py-12 md:px-10 md:py-25">
+      <div className="mx-auto flex w-full max-w-285 flex-col gap-7.5 md:flex-row md:items-center md:justify-center">
+        <div className="w-full md:w-[40.517vw] md:max-w-155">
+          <p className="mb-4 text-center text-base font-medium text-[#513B6A] md:text-left md:text-sm">
+            OUR PROGRAM
+          </p>
+
+          <h4 className="mb-3.5 text-center text-2xl leading-7 font-normal text-[#222] md:mb-5 md:text-left md:text-4xl md:leading-tight">
+            We Offer More Than Meets The Eye
+          </h4>
+
+          <p className="mb-7.5 text-center text-sm font-light text-[#222] md:text-left md:text-base">
+            As your go-to digital marketing partner to support your brand
+            business, we manage to provide integrated programmes within the
+            company to resonate our values externally, as we keep on spreading
+            our wings to influence the industry.
+          </p>
+
+          <div className="mb-7.5 md:hidden">
+            <Image
+              src="/images/programs/Group-40343-8.png"
+              alt="program-us"
+              width={1020}
+              height={760}
+              className="h-auto w-full"
+            />
+          </div>
+
+          <div className="space-y-3.75">
+            {programs.map((program, index) => {
+              const isOpen = activeIndex === index;
+
+              return (
+                <article
+                  key={program.title}
+                  className="rounded-lg border-2 border-[#222]"
+                >
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={`program-content-${index}`}
+                    onClick={() => setActiveIndex(index)}
+                    className="flex w-full items-center gap-2.5 p-2.5 text-left md:p-3.75"
+                  >
+                    <Image
+                      src={program.icon}
+                      alt={`${program.title} icon`}
+                      width={36}
+                      height={36}
+                      className="h-8 w-8 shrink-0 md:h-9 md:w-9"
+                    />
+
+                    <span className="text-base font-medium text-[#222] md:text-xl">
+                      {program.title}
+                    </span>
+
+                    {program.badge ? (
+                      <span className="rounded px-1.25 py-1 text-xs font-semibold text-white md:rounded-md md:px-2.5 md:py-1.5 md:text-base bg-[#FC5649]">
+                        {program.badge}
+                      </span>
+                    ) : null}
+
+                    <span className="ml-auto inline-flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full border-2 border-[#222] text-lg font-semibold text-[#222] md:h-9 md:w-9 md:text-2xl">
+                      {isOpen ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  {isOpen ? (
+                    <div
+                      id={`program-content-${index}`}
+                      className="px-3.25 pb-3.25 md:px-3.75 md:pb-3.75"
+                    >
+                      {program.descriptions.map((paragraph) => (
+                        <p
+                          key={paragraph}
+                          className="mb-3.5 text-sm font-light text-[#222] last:mb-0 md:text-base"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+
+                      <a
+                        href={program.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-5 inline-flex w-fit items-center gap-3.75 border-2 border-[#222] px-6 py-2.25 text-sm font-medium text-[#222] transition hover:bg-[#E8A145] hover:text-black hover:shadow-[4px_4px_0px_0px_#222] md:text-base"
+                      >
+                        Explore More
+                        <svg
+                          aria-hidden="true"
+                          viewBox="0 0 448 512"
+                          className="h-4 w-4"
+                          fill="currentColor"
+                        >
+                          <path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z" />
+                        </svg>
+                      </a>
+                    </div>
+                  ) : null}
+                </article>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="hidden w-full md:block md:w-[41.517vw] md:max-w-127.5">
+          <Image
+            src="/images/programs/Group-40343-8.png"
+            alt="program-us"
+            width={1020}
+            height={760}
+            className="h-auto w-full"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
