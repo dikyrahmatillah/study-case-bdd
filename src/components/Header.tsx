@@ -221,7 +221,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <Link href="https://bolehdicoba.com" className="md:hidden ml-12">
+        <Link href="https://bolehdicoba.com" className="md:hidden pl-[11%]">
           <Image
             width={40}
             height={30}
