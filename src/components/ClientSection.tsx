@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper/modules";
 import Image from "next/image";
@@ -214,21 +214,6 @@ function ClientSlider({ items }: { items: { src: string; alt: string }[] }) {
 export default function ClientSection() {
   const [activeTab, setActiveTab] = useState("Fashion");
   const tabsContainerRef = useRef<HTMLUListElement>(null);
-
-  useEffect(() => {
-    if (tabsContainerRef.current) {
-      const activeEl = tabsContainerRef.current.querySelector(
-        '[data-active="true"]',
-      );
-      if (activeEl) {
-        activeEl.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "center",
-        });
-      }
-    }
-  }, [activeTab]);
 
   return (
     <section

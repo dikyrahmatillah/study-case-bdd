@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function HomeBanner() {
   return (
     <section className="relative overflow-hidden">
-      <div className="hidden md:flex flex-row justify-between py-30 px-15 mt-[90px]">
+      <div className="hidden md:flex flex-row justify-between py-30 px-15 mt-22.5">
         <div className="relative shrink-0 w-[19.306vw]">
           <Image
             src="/images/Group-40451-1.png"
@@ -30,11 +30,11 @@ export default function HomeBanner() {
       <div
         className="
           relative mx-auto flex flex-col items-center justify-center
-          px-[15px] pt-25 pb-10 bg-[#F7F4F2] max-w-none
-          md:absolute md:inset-0 md:mt-40 md:mb-0 md:px-0 md:pt-0 md:pb-0 md:bg-transparent md:max-w-[690px]
+          px-3.75 pt-25 pb-10 bg-[#F7F4F2] max-w-none
+          md:absolute md:inset-0 md:mt-40 md:mb-0 md:px-0 md:pt-0 md:pb-0 md:bg-transparent md:max-w-172.5
         "
       >
-        <div className="mb-[15px] md:mb-0">
+        <div className="mb-3.75 md:mb-0">
           <h6
             className="
               text-[#513B6A] text-center font-sans text-[16px] md:text-[18px]
@@ -49,7 +49,7 @@ export default function HomeBanner() {
         <div className="md:mb-0">
           <h1
             className="
-              text-[#222] text-center text-[36px] leading-[38px]
+              text-[#222] text-center text-[36px] leading-9.5
               md:text-[64px]  md:leading-18 lg:md:leading-20
               font-semibold
               md:mt-2 md:mb-4
@@ -59,7 +59,7 @@ export default function HomeBanner() {
           </h1>
         </div>
 
-        <div className="mb-[30px] md:mb-[50px]">
+        <div className="mb-7.5 md:mb-12.5">
           <p
             className="
               text-[#222] text-center text-[14px] md:text-[18px]
@@ -78,9 +78,9 @@ export default function HomeBanner() {
           <Link
             href="#"
             className="
-              inline-flex flex-row items-center gap-[15px]
+              inline-flex flex-row items-center gap-3.75
               px-5 py-3 border-2 border-[#222] rounded-lg
-              text-[#222] font-[500] text-base
+              text-[#222] font-medium text-base
               bg-[#ffb14c]
               transition-all duration-200 ease-in-out
               hover:bg-[#E8A145] hover:shadow-[4px_4px_0px_0px_#222]
