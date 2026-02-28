@@ -104,41 +104,41 @@ function NewsCard({
   return (
     <article
       onPointerDown={(e) => e.stopPropagation()}
-      className="group relative h-auto w-[320.857px] shrink-0 max-md:w-[48%]"
+      className="group relative h-auto w-80.21425 shrink-0 max-md:w-[48%]"
     >
-      <div className="mb-[8px] flex h-full flex-col rounded-[8px] border-2 border-[#222] bg-[#F4F0EA] transition-all duration-200 group-hover:shadow-[6px_6px_0px_0px_#222]">
+      <div className="mb-2 flex h-full flex-col rounded-lg border-2 border-[#222] bg-[#F4F0EA] transition-all duration-200 group-hover:shadow-[6px_6px_0px_0px_#222]">
         <div className="news-card-image">
           <Image
             src={image}
             alt={alt}
             width={320}
             height={240}
-            className="w-full rounded-t-[6px]"
+            className="w-full rounded-t-1.5"
           />
         </div>
 
-        <div className="flex h-full flex-col rounded-b-[6px] border-t-2 border-[#222] p-[20px] max-md:p-[10px]">
-          <div className="mb-[13px] w-fit rounded-full border-2 border-[#222] bg-white px-[14px] py-[4.5px] text-center max-md:mb-[10px] max-md:px-[8px] max-md:py-[3px]">
-            <p className="m-0 text-[14px] leading-normal font-medium max-md:text-[10px] max-md:leading-[14px]">
+        <div className="flex h-full flex-col rounded-b-1.5 border-t-2 border-[#222] p-5 max-md:p-2.5">
+          <div className="mb-3.25 w-fit rounded-full border-2 border-[#222] bg-white px-3.5 py-1.125 text-center max-md:mb-2.5 max-md:px-2 max-md:py-0.75">
+            <p className="m-0 text-[14px] leading-normal font-medium max-md:text-[10px] max-md:leading-3.5">
               {category}
             </p>
           </div>
 
-          <div className="mb-[8px] max-md:mb-[4px]">
+          <div className="mb-2 max-md:mb-1">
             <p className="m-0 text-[16px] leading-normal font-light uppercase max-md:text-[12px]">
               {date}
             </p>
           </div>
 
-          <div className="mb-[10px] max-md:mb-[4px]">
+          <div className="mb-2.5 max-md:mb-1">
             <a href={link} target="_blank" rel="noreferrer" className="block">
-              <h6 className="m-0 line-clamp-4 text-[24px] leading-7.5 font-medium text-[#222] transition-all duration-200 group-hover:underline max-md:text-[14px] max-md:leading-[20px]">
+              <h6 className="m-0 line-clamp-4 text-[24px] leading-7.5 font-medium text-[#222] transition-all duration-200 group-hover:underline max-md:text-[14px] max-md:leading-5">
                 {title}
               </h6>
             </a>
           </div>
 
-          <div className="mb-[20px] max-md:mb-[10px]">
+          <div className="mb-5 max-md:mb-2.5">
             <p className="m-0 line-clamp-3 text-[16px] leading-5 font-light text-[#222] max-md:text-[12px]">
               {description}
             </p>
@@ -149,22 +149,22 @@ function NewsCard({
               href={link}
               target="_blank"
               rel="noreferrer"
-              className="m-0 flex items-center gap-[10px] text-[18px] leading-5.5 font-medium text-[#222] max-md:gap-[5px] max-md:text-[14px] max-md:leading-[20px]"
+              className="m-0 flex items-center gap-2.5 text-[18px] leading-5.5 font-medium text-[#222] max-md:gap-1.25 max-md:text-[14px] max-md:leading-5"
             >
               Read More
-              <FaArrowRight className="-mb-[3px] -rotate-45" />
+              <FaArrowRight className="-mb-0.75 -rotate-45" />
             </a>
           </div>
         </div>
 
-        <div className="absolute top-[20px] right-[20px] flex max-md:top-[9px] max-md:right-[12px]">
+        <div className="absolute top-5 right-5 flex max-md:top-2.25 max-md:right-3">
           <a
             href={link}
             target="_blank"
             rel="noreferrer"
-            className="flex h-[64px] w-[64px] items-center justify-center rounded-full border-2 border-[#222] bg-white text-[30px] text-[#222] transition-all duration-200 group-hover:bg-[#FFB14C] group-hover:shadow-[6px_6px_0px_0px_#222] max-md:h-[24px] max-md:w-[24px] max-md:px-[4.5px] max-md:py-[3px] max-md:text-[12px]"
+            className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#222] bg-white text-[30px] text-[#222] transition-all duration-200 group-hover:bg-[#FFB14C] group-hover:shadow-[6px_6px_0px_0px_#222] max-md:h-6 max-md:w-6 max-md:px-1.125 max-md:py-0.75 max-md:text-[12px]"
           >
-            <GoArrowUpRight className="-mb-[3px]" />
+            <GoArrowUpRight className="-mb-0.75" />
           </a>
         </div>
       </div>
@@ -174,7 +174,6 @@ function NewsCard({
 
 export default function NewsBlogSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const pointerActiveRef = useRef(false);
   const hasDraggedRef = useRef(false);
@@ -192,7 +191,6 @@ export default function NewsBlogSection() {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
       const maxScroll = scrollWidth - clientWidth;
       const progress = maxScroll > 0 ? scrollLeft / maxScroll : 0;
-      setScrollProgress(progress);
       const metrics = getScrollbarMetrics();
       if (metrics) {
         const thumbWidth = metrics.thumb.width;
@@ -276,7 +274,6 @@ export default function NewsBlogSection() {
     );
 
     metrics.container.scrollLeft = percent * metrics.maxScroll;
-    setScrollProgress(percent);
     setThumbLeft(percent * usable);
   };
 
@@ -311,7 +308,6 @@ export default function NewsBlogSection() {
     );
 
     metrics.container.scrollLeft = percent * metrics.maxScroll;
-    setScrollProgress(percent);
     setThumbLeft(percent * usable);
   };
 
@@ -336,20 +332,21 @@ export default function NewsBlogSection() {
       window.removeEventListener("resize", handleResize);
       clearTimeout(timeoutId);
     };
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);
 
   return (
-    <section className="my-[100px] max-md:my-[50px] max-md:mb-[70px] max-md:px-[15px]">
-      <div className="mx-auto mb-[50px] flex max-w-[1140px] items-end justify-between max-md:flex-col max-md:items-center max-md:justify-center max-md:px-[5px]">
+    <section className="my-25 max-md:my-12.5 max-md:mb-17.5 max-md:px-3.75">
+      <div className="mx-auto mb-12.5 flex max-w-285 items-end justify-between max-md:flex-col max-md:items-center max-md:justify-center max-md:px-1.25">
         <div className="flex-1">
-          <div className="mb-[5px]">
+          <div className="mb-1.25">
             <p className="m-0 text-[14px] leading-normal font-medium text-[#513B6A] max-md:text-center max-md:text-[16px]">
               NEWS & BLOG
             </p>
           </div>
 
-          <div className=" max-md:mb-[30px]">
-            <h4 className="m-0 text-[36px] leading-normal font-normal text-[#222] max-md:text-center max-md:text-[24px] max-md:leading-[28px]">
+          <div className=" max-md:mb-7.5">
+            <h4 className="m-0 text-[36px] leading-normal font-normal text-[#222] max-md:text-center max-md:text-[24px] max-md:leading-7">
               Your time is valuable.
               <span className="block leading-none">
                 Read our insightful article within 5 minutes.
@@ -360,7 +357,7 @@ export default function NewsBlogSection() {
 
         <Link
           href="/news-blog/"
-          className="m-0 flex w-fit items-center gap-[15px] bg-[#ffb14c] text-[#000] border-2 border-[#222222] rounded-[8px] px-[20px] py-[13px] text-[16px] font-medium leading-[20.16px] transition-all duration-200 hover:bg-[#E8A145] hover:text-black hover:shadow-[4px_4px_0px_0px_#222] max-md:shadow-[4px_4px_0px_0px_#222]"
+          className="m-0 flex w-fit items-center gap-3.75 bg-[#ffb14c] text-black border-2 border-[#222222] rounded-lg px-5 py-3.25 text-[16px] font-medium leading-5.04 transition-all duration-200 hover:bg-[#E8A145] hover:text-black hover:shadow-[4px_4px_0px_0px_#222] max-md:shadow-[4px_4px_0px_0px_#222]"
         >
           Explore More Article
           <FaArrowRight />
@@ -378,7 +375,7 @@ export default function NewsBlogSection() {
             onPointerCancel={handlePointerCancel}
             onLostPointerCapture={handlePointerCancel}
             onClickCapture={handleClickCapture}
-            className={`flex w-full flex-row items-stretch gap-[30px] pr-[30px] pb-[135px] md:overflow-x-auto md:cursor-grab md:touch-pan-x md:select-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-md:flex-wrap max-md:gap-[10px] max-md:pr-0 max-md:pb-0 ${isDragging ? "md:cursor-grabbing" : ""}`}
+            className={`flex w-full flex-row items-stretch gap-7.5 pr-7.5 pb-33.75 md:overflow-x-auto md:cursor-grab md:touch-pan-x md:select-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-md:flex-wrap max-md:gap-2.5 max-md:pr-0 max-md:pb-0 ${isDragging ? "md:cursor-grabbing" : ""}`}
           >
             {newsData.map((item) => (
               <NewsCard key={item.id} {...item} />
@@ -388,7 +385,7 @@ export default function NewsBlogSection() {
           <div
             ref={scrollbarRef}
             onClick={handleScrollbarClick}
-            className="absolute bottom-13.5 left-0 hidden h-[1px] w-[47.917vw] bg-[#A9A59E] md:block"
+            className="absolute bottom-13.5 left-0 hidden h-px w-[47.917vw] bg-[#A9A59E] md:block"
           >
             <div
               ref={scrollbarDragRef}
@@ -396,7 +393,7 @@ export default function NewsBlogSection() {
               onPointerMove={handleScrollbarPointerMove}
               onPointerUp={handleScrollbarPointerUp}
               onPointerCancel={handleScrollbarPointerUp}
-              className="absolute top-[-45px] h-[135px] bg-transparent bg-[length:100%_auto] bg-no-repeat transition-all duration-75"
+              className="absolute -top-11.25 h-33.75 bg-transparent bg-size-[100%_auto] bg-no-repeat transition-all duration-75"
               style={{
                 backgroundImage: "url('/images/news/slide-indicator.png')",
                 width: "100px",

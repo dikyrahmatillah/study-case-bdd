@@ -192,12 +192,12 @@ export default function Footer() {
                         FOLLOW US
                       </h6>
                     </div>
-                    <div className="flex gap-[8.67px]">
+                    <div className="flex gap-2.1675">
                       <a
                         href="https://www.instagram.com/bolehdicobadigital/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-[36.67px] h-[36.67px] bg-white rounded-full flex items-center justify-center p-[7.3px] hover:bg-gray-200 transition-colors text-black"
+                        className="w-9.1675 h-9.1675 bg-white rounded-full flex items-center justify-center p-1.825 hover:bg-gray-200 transition-colors text-black"
                       >
                         <InstagramIcon />
                       </a>
@@ -205,7 +205,7 @@ export default function Footer() {
                         href="https://id.linkedin.com/company/bolehdicoba"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-[36.67px] h-[36.67px] bg-white rounded-full flex items-center justify-center p-[7.3px] hover:bg-gray-200 transition-colors text-black"
+                        className="w-9.1675 h-9.1675 bg-white rounded-full flex items-center justify-center p-1.825 hover:bg-gray-200 transition-colors text-black"
                       >
                         <LinkedinIcon />
                       </a>
@@ -213,7 +213,7 @@ export default function Footer() {
                         href="https://www.tiktok.com/@bolehdicobadigital"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-[36.67px] h-[36.67px] bg-white rounded-full flex items-center justify-center p-[7.3px] hover:bg-gray-200 transition-colors text-black"
+                        className="w-9.1675 h-9.1675 bg-white rounded-full flex items-center justify-center p-1.825 hover:bg-gray-200 transition-colors text-black"
                       >
                         <TiktokIcon />
                       </a>

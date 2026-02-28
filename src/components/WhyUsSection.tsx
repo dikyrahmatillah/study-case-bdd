@@ -25,8 +25,8 @@ export default function WhyUsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="max-w-[1140px] mx-auto my-[100px_auto_139px] mt-[100px] mb-[139px] flex flex-row items-center gap-[50px] overflow-hidden max-[750px]:max-w-none max-[750px]:mx-auto max-[750px]:my-[50px_auto_70px] max-[750px]:mt-[50px] max-[750px]:mb-[70px] max-[750px]:flex-col max-[750px]:px-[15px] max-[750px]:gap-[30px] border-b-2 md:border-b-0">
-      <div className="relative flex-none w-[510px] max-[750px]:w-full max-[750px]:order-2">
+    <section className="max-w-285 mx-auto my-[100px_auto_139px] mt-25 mb-34.75 flex flex-row items-center gap-12.5 overflow-hidden max-[750px]:max-w-none max-[750px]:mx-auto max-[750px]:my-[50px_auto_70px] max-[750px]:mt-12.5 max-[750px]:mb-17.5 max-[750px]:flex-col max-[750px]:px-3.75 max-[750px]:gap-7.5 border-b-2 md:border-b-0">
+      <div className="relative flex-none w-127.5 max-[750px]:w-full max-[750px]:order-2">
         <Image
           src="/images/why-us/Group-40343-7.png"
           alt="choose-us"
@@ -44,14 +44,14 @@ export default function WhyUsSection() {
         </div>
 
         <div className="mb-5">
-          <h4 className="text-[#222] text-[44px] font-normal leading-14 m-0 max-[750px]:text-[24px] max-[750px]:leading-[28px] max-[750px]:text-center">
+          <h4 className="text-[#222] text-[44px] font-normal leading-14 m-0 max-[750px]:text-[24px] max-[750px]:leading-7 max-[750px]:text-center">
             It&apos;s not about how much budget you spent, but how you spend
             them.
           </h4>
         </div>
 
-        <div className="mb-[30px]">
-          <p className="text-[#222] text-[16px] font-light leading-[22px] max-[750px]:text-[14px] max-[750px]:text-center">
+        <div className="mb-7.5">
+          <p className="text-[#222] text-[16px] font-light leading-5.5 max-[750px]:text-[14px] max-[750px]:text-center">
             Embracing a focus of sustainable growth, we prioritise cultivating
             long-term partnerships, ensuring your brand&apos;s growth aligns
             with effective practices. Together, we create a positive impact that
@@ -78,7 +78,7 @@ export default function WhyUsSection() {
                   <button
                     type="button"
                     onClick={() => setActiveIndex(isActive ? -1 : index)}
-                    className="w-full rounded-none border-0 text-[#222] text-[20px] leading-normal px-5 py-0 bg-transparent shadow-none text-left flex items-center gap-[15px] cursor-pointer max-[750px]:px-[10px]"
+                    className="w-full rounded-none border-0 text-[#222] text-[20px] leading-normal px-5 py-0 bg-transparent shadow-none text-left flex items-center gap-3.75 cursor-pointer max-[750px]:px-2.5"
                   >
                     <Image
                       src={item.icon}
@@ -99,7 +99,7 @@ export default function WhyUsSection() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-20 pb-0 mx-auto text-[#222] text-[14px] font-normal leading-4.5 max-[750px]:pl-[70px]">
+                    <div className="px-20 pb-0 mx-auto text-[#222] text-[14px] font-normal leading-4.5 max-[750px]:pl-17.5">
                       {item.body}
                     </div>
                   </div>

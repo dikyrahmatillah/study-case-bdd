@@ -43,7 +43,7 @@ export default function AchievementSection() {
           transition-timing-function: linear !important;
         }
       `}</style>
-      <div className="flex flex-row items-center max-[750px]:flex-col max-[750px]:mt-[50px] max-[750px]:mb-[70px] max-[750px]:overflow-hidden">
+      <div className="flex flex-row items-center max-[750px]:flex-col max-[750px]:mt-12.5 max-[750px]:mb-17.5 max-[750px]:overflow-hidden">
         <div className="flex-[0_0_auto] w-[64.5vw] -ml-[4%] max-[750px]:w-[160%] max-[750px]:ml-0 max-[750px]:order-2">
           <Swiper
             modules={[FreeMode, Autoplay]}
@@ -78,14 +78,14 @@ export default function AchievementSection() {
           </Swiper>
         </div>
 
-        <div className="flex-[0_0_auto] w-[38.1vw] py-[70px] pr-[195px] pl-[50px] bg-[#ADC2E6] border-l-2 border-[#222] z-10 min-[768px]:max-[1367px]:pr-[70px] max-[750px]:w-full max-[750px]:px-[15px] max-[750px]:py-0 max-[750px]:order-1 max-[750px]:border-l-0 max-[750px]:mb-[30px]">
-          <div className="mb-[15px]">
+        <div className="flex-[0_0_auto] w-[38.1vw] py-17.5 pr-48.75 pl-12.5 bg-[#ADC2E6] border-l-2 border-[#222] z-10 min-[768px]:max-[1367px]:pr-17.5 max-[750px]:w-full max-[750px]:px-3.75 max-[750px]:py-0 max-[750px]:order-1 max-[750px]:border-l-0 max-[750px]:mb-7.5">
+          <div className="mb-3.75">
             <p className="text-[#513B6A] text-[14px] font-medium leading-normal m-0 text-right max-[750px]:text-[16px] max-[750px]:text-center">
               OUR ACHIEVEMENTS
             </p>
           </div>
           <div>
-            <p className="text-[#222] text-[36px] font-normal leading-11.25 m-0 text-right max-[750px]:text-[24px] max-[750px]:leading-[28px] max-[750px]:text-center">
+            <p className="text-[#222] text-[36px] font-normal leading-11.25 m-0 text-right max-[750px]:text-[24px] max-[750px]:leading-7 max-[750px]:text-center">
               A Legacy of Excellence: Our Journey of Achievements
             </p>
           </div>

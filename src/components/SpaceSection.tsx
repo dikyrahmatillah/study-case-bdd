@@ -28,19 +28,19 @@ const images = [
 
 export default function SpaceSection() {
   return (
-    <section className="flex flex-col items-center pt-[100px] pb-[120px] px-0 max-[750px]:pt-[50px] max-[750px]:pb-[30px] max-[750px]:px-4 border-b-2 border-[#222222]">
-      <div className="max-w-[1140px] mb-[25px] text-center">
-        <h2 className="text-[#222222] text-[36px] font-normal leading-[45px] max-[750px]:text-[24px] max-[750px]:leading-[28px]">
+    <section className="flex flex-col items-center pt-25 pb-30 px-0 max-[750px]:pt-12.5 max-[750px]:pb-7.5 max-[750px]:px-4 border-b-2 border-[#222222]">
+      <div className="max-w-285 mb-6.25 text-center">
+        <h2 className="text-[#222222] text-[36px] font-normal leading-11.25 max-[750px]:text-[24px] max-[750px]:leading-7">
           Our Space - Where Ideas Take Flight
         </h2>
       </div>
 
-      <div className="max-w-[400px] mx-auto text-center text-[#222222] text-[16px] font-light leading-[24px] mb-[50px] max-[750px]:text-[14px] max-[750px]:leading-[17px] max-[750px]:mb-[30px]">
+      <div className="max-w-100 mx-auto text-center text-[#222222] text-[16px] font-light leading-6 mb-12.5 max-[750px]:text-[14px] max-[750px]:leading-4.25 max-[750px]:mb-7.5">
         Step into BDD’s Agency—where strategy meets imagination. A space
         designed for collaboration, innovation, and bringing bold ideas to life.
       </div>
 
-      <div className="max-w-[1140px] w-full">
+      <div className="max-w-285 w-full">
         <Swiper
           modules={[Autoplay, Pagination]}
           slidesPerView={3}
@@ -67,7 +67,7 @@ export default function SpaceSection() {
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>
-              <figure className="px-[7px]">
+              <figure className="px-1.75">
                 <Image
                   src={image.src}
                   alt={image.alt}

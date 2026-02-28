@@ -85,7 +85,7 @@ export default function ClientStatsSection() {
           }
         }
       `}</style>
-      <section className="max-w-285 mx-auto my-25 max-md:my-[50px] max-md:max-w-none max-md:px-2.75 flex flex-row max-md:flex-col gap-12.5 max-md:gap-7.5 items-center md:max-xl:justify-center">
+      <section className="max-w-285 mx-auto my-25 max-md:my-12.5 max-md:max-w-none max-md:px-2.75 flex flex-row max-md:flex-col gap-12.5 max-md:gap-7.5 items-center md:max-xl:justify-center">
         <div className="flex-none max-w-[35.417vw] md:max-xl:max-w-[42.817vw] max-md:max-w-none max-md:w-full flex flex-col gap-3.75">
           <p className="text-[#513B6A] text-sm max-md:text-base font-medium leading-normal m-0 max-md:text-center">
             WE ON NUMBERS

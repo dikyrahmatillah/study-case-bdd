@@ -125,22 +125,22 @@ export default function ServicesSection() {
   return (
     <section
       ref={sectionRef}
-      className="pt-[100px] px-[50px] pb-0 overflow-hidden max-[750px]:pt-[50px] max-[750px]:px-[15px] max-[750px]:pb-[70px] border-b-2 border-[#222222]"
+      className="pt-25 px-12.5 pb-0 overflow-hidden max-[750px]:pt-12.5 max-[750px]:px-3.75 max-[750px]:pb-17.5 border-b-2 border-[#222222]"
     >
-      <div className="flex flex-row justify-center items-end max-w-[1050px] mx-auto mb-[50px] max-[750px]:flex-col max-[750px]:items-center max-[750px]:max-w-none max-[750px]:mb-[30px]">
-        <div className="services-header-left flex-1 pr-[50px] max-[900px]:pr-[30px] max-[750px]:pr-0">
-          <div className="mb-[14px]">
+      <div className="flex flex-row justify-center items-end max-w-262.5 mx-auto mb-12.5 max-[750px]:flex-col max-[750px]:items-center max-[750px]:max-w-none max-[750px]:mb-7.5">
+        <div className="services-header-left flex-1 pr-12.5 max-[900px]:pr-7.5 max-[750px]:pr-0">
+          <div className="mb-3.5">
             <p className="text-[#222] text-[14px] font-medium leading-normal m-0 max-[750px]:text-[16px] max-[750px]:text-center">
               OUR SERVICES
             </p>
           </div>
-          <div className="max-[750px]:mb-[15px]">
-            <h4 className="text-[#222] text-[44px] font-normal leading-14 m-0 max-[750px]:text-[24px] max-[750px]:leading-[28px] max-[750px]:text-center whitespace-pre-line">
+          <div className="max-[750px]:mb-3.75">
+            <h4 className="text-[#222] text-[44px] font-normal leading-14 m-0 max-[750px]:text-[24px] max-[750px]:leading-7 max-[750px]:text-center whitespace-pre-line">
               {"We Offer a Wide Services\nAimed to Support your Business"}
             </h4>
           </div>
         </div>
-        <div className="services-header-right w-[45%] pl-6 self-end max-[1050px]:w-[48%] max-[900px]:pl-[20px] max-[750px]:w-full max-[750px]:pl-0 max-[750px]:self-center">
+        <div className="services-header-right w-[45%] pl-6 self-end max-[1050px]:w-[48%] max-[900px]:pl-5 max-[750px]:w-full max-[750px]:pl-0 max-[750px]:self-center">
           <div>
             <p className="text-[#222] text-[16px] font-light leading-5 m-0 max-[750px]:text-[14px] max-[750px]:text-center">
               It may surprise you, but digital marketing is not a single
@@ -162,29 +162,29 @@ export default function ServicesSection() {
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className="absolute top-0 left-0 right-0 bottom-0 w-full h-[540px] border-2 border-[#222] rounded-2xl flex items-center max-[750px]:h-[155vw]"
+              className="absolute top-0 left-0 right-0 bottom-0 w-full h-135 border-2 border-[#222] rounded-2xl flex items-center max-[750px]:h-[155vw]"
               style={{
                 backgroundColor: service.bgColor,
                 color: service.textColor,
                 zIndex: index,
               }}
             >
-              <div className="max-w-[1050px] mx-auto flex flex-row items-center gap-[50px] max-[750px]:max-w-none max-[750px]:mx-0 max-[750px]:flex-col max-[750px]:gap-[15px] max-[750px]:px-[14px]">
+              <div className="max-w-262.5 mx-auto flex flex-row items-center gap-12.5 max-[750px]:max-w-none max-[750px]:mx-0 max-[750px]:flex-col max-[750px]:gap-3.75 max-[750px]:px-3.5">
                 <div className="services-card-text max-[750px]:order-2">
                   <div className="mb-5">
-                    <h4 className="text-[44px] font-normal leading-14 m-0 max-[750px]:text-[24px] max-[750px]:leading-[28px] max-[750px]:text-center whitespace-pre-line">
+                    <h4 className="text-[44px] font-normal leading-14 m-0 max-[750px]:text-[24px] max-[750px]:leading-7 max-[750px]:text-center whitespace-pre-line">
                       {service.title}
                     </h4>
                   </div>
-                  <div className="mb-[70px] max-[750px]:mb-[30px]">
-                    <p className="text-[16px] font-light leading-[22px] m-0 max-[750px]:text-[14px] max-[750px]:leading-normal max-[750px]:text-center">
+                  <div className="mb-17.5 max-[750px]:mb-7.5">
+                    <p className="text-[16px] font-light leading-5.5 m-0 max-[750px]:text-[14px] max-[750px]:leading-normal max-[750px]:text-center">
                       {service.description}
                     </p>
                   </div>
                   <div className="max-[750px]:flex max-[750px]:justify-center">
                     <a
                       href={service.link}
-                      className="inline-flex flex-row gap-[15px] items-center text-[16px] border-2 rounded-lg px-5 py-3 font-[500] bg-[#ffb14c] transition-all duration-300 hover:bg-[#E8A145] hover:shadow-[4px_4px_0px_0px_#222] hover:text-black"
+                      className="inline-flex flex-row gap-3.75 items-center text-[16px] border-2 rounded-lg px-5 py-3 font-medium bg-[#ffb14c] transition-all duration-300 hover:bg-[#E8A145] hover:shadow-[4px_4px_0px_0px_#222] hover:text-black"
                       style={{
                         borderColor: service.textColor,
                         color: service.textColor,
@@ -196,7 +196,7 @@ export default function ServicesSection() {
                   </div>
                 </div>
 
-                <div className="relative flex-shrink-0 w-[33.217vw] max-[750px]:w-full max-[750px]:order-1">
+                <div className="relative shrink-0 w-[33.217vw] max-[750px]:w-full max-[750px]:order-1">
                   <Image
                     src={service.image}
                     alt={service.title}

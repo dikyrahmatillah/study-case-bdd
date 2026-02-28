@@ -173,7 +173,7 @@ const DesktopMenu = ({ menuData }: { menuData: MenuItem[] }) => (
             <ul
               className={`sub-menu ${item.subMenuMod || ""} hidden group-hover:flex absolute left-0 right-0 top-full z-30`}
             >
-              <div className="mx-auto w-full  flex flex-row flex-wrap border-[0.5px] border-[#d9d4cb] bg-[#f7f5f0]">
+              <div className="mx-auto w-full  flex flex-row flex-wrap border-0.125 border-[#d9d4cb] bg-[#f7f5f0]">
                 {item.subMenu.map((subItem, index) => {
                   const itemCount = item.subMenu!.length;
                   let widthClass = "w-1/3";
@@ -191,7 +191,7 @@ const DesktopMenu = ({ menuData }: { menuData: MenuItem[] }) => (
                   return (
                     <li
                       key={subItem.id}
-                      className={`menu-item ${widthClass} p-[30px_50px] border-[0.5px] border-[#d9d4cb]`}
+                      className={`menu-item ${widthClass} p-[30px_50px] border-0.125 border-[#d9d4cb]`}
                     >
                       <div className="title text-[#222] text-xl font-medium mb-2.5">
                         {subItem.title}

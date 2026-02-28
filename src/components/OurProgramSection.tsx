@@ -106,7 +106,7 @@ export default function OurProgramSection() {
                       alt="accordion-image"
                       width={44}
                       height={44}
-                      className="h-[44px] w-auto"
+                      className="h-11 w-auto"
                     />
                     <span className="ml-2 text-base font-medium leading-normal text-[#222] md:ml-3.75 md:text-xl">
                       {program.title}
