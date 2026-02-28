@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const InstagramIcon = () => (
   <svg
-    className="w-[22px] h-[22px] text-dark"
+    className="w-5.5 h-5.5 text-dark"
     aria-hidden="true"
     focusable="false"
     data-prefix="fab"
@@ -21,7 +21,7 @@ const InstagramIcon = () => (
 
 const LinkedinIcon = () => (
   <svg
-    className="w-[22px] h-[22px] text-dark"
+    className="w-5.5 h-5.5 text-dark"
     aria-hidden="true"
     focusable="false"
     data-prefix="fab"
@@ -39,7 +39,7 @@ const LinkedinIcon = () => (
 
 const TiktokIcon = () => (
   <svg
-    className="w-[22px] h-[22px] text-dark"
+    className="w-5.5 h-5.5 text-dark"
     aria-hidden="true"
     focusable="false"
     data-prefix="fab"
@@ -75,17 +75,17 @@ const ArrowRightIcon = () => (
 export default function Footer() {
   return (
     <footer id="site-footer" className="relative w-full bg-white ">
-      <div className="bg-[#513b6a] py-[70px] rounded-t-[60px]">
-        <div className="max-w-[1140px] mx-auto relative px-4 md:px-0">
+      <div className="bg-[#513b6a] py-17.5 rounded-t-[60px]">
+        <div className="max-w-285 mx-auto relative px-4 md:px-0">
           <div className="flex flex-col md:flex-row justify-around items-center gap-8 md:gap-0">
-            <div className="flex-none max-w-[600px] text-center md:text-left">
-              <div className="mb-[15px]">
+            <div className="flex-none max-w-150 text-center md:text-left">
+              <div className="mb-3.75">
                 <h6 className="text-white text-[44px] font-normal leading-[1.26] m-0">
                   Let&apos;s grow and collaborate with us!
                 </h6>
               </div>
               <div>
-                <p className="text-white text-[16px] font-light leading-[1.5] m-0">
+                <p className="text-white text-[16px] font-light leading-normal m-0">
                   Creating sustainable partnerships with our clients.
                   Transparency, honesty, and real talk are part of our
                   collaborative DNA.
@@ -97,7 +97,7 @@ export default function Footer() {
               <div className="inline-block">
                 <a
                   href="https://api.whatsapp.com/send?phone=6281805757585&text=Halo%20saya%20tau%20BDD%20dari%20Website,%20mohon%20diinformasikan%20terkait%20servisnya%20ya"
-                  className="flex items-center gap-[15px] bg-[#ffb14c] border-2 border-[#222] hover:bg-[#E8A145] hover:shadow-[4px_4px_0px_0px_#222] text-black font-medium py-[13px] px-[20px] rounded-lg transition-all duration-300"
+                  className="flex items-center gap-3.75 bg-[#ffb14c] border-2 border-[#222] hover:bg-[#E8A145] hover:shadow-[4px_4px_0px_0px_#222] text-black font-medium py-3.25 px-5 rounded-lg transition-all duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -112,28 +112,28 @@ export default function Footer() {
 
       <div className="bg-[#513b6a] relative">
         <div className="bg-[#131313] rounded-t-[60px] relative z-10">
-          <div className="py-[70px] pb-[100px] px-[15px] mx-auto lg:px-0 max-w-[1140px]">
-            <div className="flex flex-col lg:flex-row lg:gap-[120px]">
+          <div className="py-17.5 pb-25 px-3.75 mx-auto lg:px-0 max-w-285">
+            <div className="flex flex-col lg:flex-row lg:gap-30">
               <div className="grow shrink-0">
-                <div className="max-w-[201px] mb-[25px]">
+                <div className="max-w-50.25 mb-6.25">
                   <Link href="https://bolehdicoba.com" className="block">
                     <Image
                       src="/images/footer/Frame.png"
                       alt="Boleh Dicoba Digital"
                       width={201}
                       height={40}
-                      className="h-[40px] w-auto"
+                      className="h-10 w-auto"
                       decoding="async"
                     />
                   </Link>
                 </div>
-                <div className="lg:hidden mb-[30px]">
-                  <h4 className="text-white text-[24px] lg:text-[36px] font-[600] leading-3">
+                <div className="lg:hidden mb-7.5">
+                  <h4 className="text-white text-[24px] lg:text-[36px] font-semibold leading-3">
                     Get any update from us!
                   </h4>
                 </div>
-                <div className="max-w-[419px] mb-[30px]">
-                  <p className="text-[#b8b8b8] text-[16px] font-light leading-[22px] m-0">
+                <div className="max-w-104.75 mb-7.5">
+                  <p className="text-[#b8b8b8] text-[16px] font-light leading-5.5 m-0">
                     We are players in the integrated digital marketing game,
                     devoted to the pursuit of collective sustainable growth that
                     ensures lasting success. Our mission is to elevate your
@@ -144,8 +144,8 @@ export default function Footer() {
               </div>
 
               <div className="grow shrink-0">
-                <div className="mb-[30px]">
-                  <div className="hidden lg:block mb-[30px]">
+                <div className="mb-7.5">
+                  <div className="hidden lg:block mb-7.5">
                     <h4 className="text-white text-[36px] font-medium m-0 leading-normal">
                       Get any update from us!
                     </h4>
@@ -156,7 +156,7 @@ export default function Footer() {
                     action="https://bolehdicoba.com/wp-admin/admin-ajax.php"
                     method="POST"
                   >
-                    <div className="flex flex-row gap-[15px]">
+                    <div className="flex flex-row gap-3.75">
                       <input
                         type="hidden"
                         name="action"
@@ -170,12 +170,12 @@ export default function Footer() {
                       <input
                         type="text"
                         name="email"
-                        className="flex-grow bg-[#222] border-2 border-[#222] text-white rounded-lg px-4 py-3 placeholder-white/50 focus:bg-white focus:text-[#222] outline-none transition-colors"
+                        className="grow bg-[#222] border-2 border-[#222] text-white rounded-lg px-4 py-3 placeholder-white/50 focus:bg-white focus:text-[#222] outline-none transition-colors"
                         placeholder="Email address"
                       />
                       <button
                         type="submit"
-                        className="flex items-center justify-center gap-[5px] bg-[#ffb14c] border-2 border-[#222] hover:bg-[#E8A145] hover:shadow-[4px_4px_0px_0px_#222] text-black font-medium py-[13px] px-[20px] rounded-lg transition-all duration-300"
+                        className="flex items-center justify-center gap-1.25 bg-[#ffb14c] border-2 border-[#222] hover:bg-[#E8A145] hover:shadow-[4px_4px_0px_0px_#222] text-black font-medium py-3.25 px-5 rounded-lg transition-all duration-300"
                       >
                         Subscribe
                         <ArrowRightIcon />
@@ -185,10 +185,10 @@ export default function Footer() {
                   </form>
                 </div>
 
-                <div className="flex flex-row gap-[49px] mb-[50px]">
+                <div className="flex flex-row gap-12.25 mb-12.5">
                   <div className="flex-1">
-                    <div className="mb-[10px]">
-                      <h6 className="text-white text-[14px] leading-[20px] uppercase m-0 font-normal">
+                    <div className="mb-2.5">
+                      <h6 className="text-white text-[14px] leading-5 uppercase m-0 font-normal">
                         FOLLOW US
                       </h6>
                     </div>
@@ -221,12 +221,12 @@ export default function Footer() {
                   </div>
 
                   <div className="flex-1">
-                    <div className="mb-[10px]">
-                      <h6 className="text-white text-[14px] leading-[20px] uppercase m-0 font-normal">
+                    <div className="mb-2.5">
+                      <h6 className="text-white text-[14px] leading-5 uppercase m-0 font-normal">
                         OUR ECOSYSTEM
                       </h6>
                     </div>
-                    <div className="flex flex-col lg:items-center gap-[18px]">
+                    <div className="flex flex-col md:flex-row lg:items-center gap-4.5">
                       <a
                         href="https://bolehbelajar.com/"
                         target="_blank"
@@ -237,10 +237,10 @@ export default function Footer() {
                           alt="boleh belajar"
                           width={120}
                           height={29}
-                          className="h-[auto] max-w-[100px]"
+                          className="h-auto max-w-25"
                         />
                       </a>
-                      <div className="hidden sm:block w-[1px] h-[24px] bg-white"></div>
+                      <div className="hidden sm:block w-px h-6 bg-white"></div>
                       <a
                         href="https://sksdigital.id/"
                         target="_blank"
@@ -251,7 +251,7 @@ export default function Footer() {
                           alt="sks digital"
                           width={79}
                           height={39}
-                          className="h-auto max-w-[100px]"
+                          className="h-auto max-w-25"
                         />
                       </a>
                     </div>
@@ -260,21 +260,21 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-[40px] lg:gap-[40px] ">
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-10 ">
               <div className="flex-1">
-                <ul className="grid grid-cols-2 gap-y-[30px] gap-x-[30px] lg:flex lg:flex-col lg:flex-wrap lg:max-h-[370px] list-none p-0 mt-[17px]">
-                  <li className="flex flex-col gap-[15px]">
+                <ul className="grid grid-cols-2 gap-y-7.5 gap-x-7.5 lg:flex lg:flex-col lg:flex-wrap lg:max-h-92.5 list-none p-0 mt-4.25">
+                  <li className="flex flex-col gap-3.75">
                     <Link
                       href="/"
-                      className="text-white text-[14px] font-normal uppercase leading-[20px]"
+                      className="text-white text-[14px] font-normal uppercase leading-5"
                     >
                       BOLEH DICOBA DIGITAL
                     </Link>
-                    <ul className="flex flex-col gap-[12px] pl-0 list-none">
+                    <ul className="flex flex-col gap-3 pl-0 list-none">
                       <li>
                         <Link
                           href="/about-us"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           About Us
                         </Link>
@@ -282,7 +282,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/news-blog"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           News & Blog
                         </Link>
@@ -290,7 +290,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/case-study"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Case Studies
                         </Link>
@@ -298,7 +298,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/loyalty-program"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Loyalty Program
                         </Link>
@@ -306,7 +306,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/web-seo-audit"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Web & SEO Audit
                         </Link>
@@ -314,15 +314,15 @@ export default function Footer() {
                     </ul>
                   </li>
 
-                  <li className="flex flex-col gap-[15px]">
-                    <span className="text-white text-[14px] font-normal uppercase leading-[20px] lg:leading-[24px] cursor-default">
+                  <li className="flex flex-col gap-3.75">
+                    <span className="text-white text-[14px] font-normal uppercase leading-5 lg:leading-6 cursor-default">
                       PROGRAM
                     </span>
-                    <ul className="flex flex-col gap-[12px] pl-0 list-none">
+                    <ul className="flex flex-col gap-3 pl-0 list-none">
                       <li>
                         <Link
                           href="/program/bulletin"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Bulletin by BDD
                         </Link>
@@ -330,7 +330,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/program/breakfast-club"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Breakfast Club
                         </Link>
@@ -338,7 +338,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/program/events"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Events
                         </Link>
@@ -346,15 +346,15 @@ export default function Footer() {
                     </ul>
                   </li>
 
-                  <li className="flex flex-col gap-[15px]">
-                    <span className="text-white text-[14px] font-normal uppercase leading-[20px] lg:leading-[24px] cursor-default">
+                  <li className="flex flex-col gap-3.75">
+                    <span className="text-white text-[14px] font-normal uppercase leading-5 lg:leading-6 cursor-default">
                       SERVICES
                     </span>
-                    <ul className="flex flex-col gap-[12px] pl-0 list-none">
+                    <ul className="flex flex-col gap-3 pl-0 list-none">
                       <li>
                         <Link
                           href="/services/digital-advertising"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Digital Advertising
                         </Link>
@@ -362,7 +362,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/services/performance-creative"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Performance Creative
                         </Link>
@@ -370,7 +370,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/services/website-development"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Web Development & Maintenance
                         </Link>
@@ -378,7 +378,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/services/seo"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Search Engine Optimization
                         </Link>
@@ -386,7 +386,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/services/professional-service"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Professional Service
                         </Link>
@@ -394,7 +394,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/services/community-program-development"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Community Program Development
                         </Link>
@@ -402,7 +402,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="https://bolehbelajar.com/"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Digital Marketing Training by Boleh Belajar
                         </Link>
@@ -410,7 +410,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href="/career"
-                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-[20px] lg:leading-[24px] hover:text-white transition-colors block max-w-[270px]"
+                          className="text-white/70 text-[14px] lg:text-[16px] font-light leading-5 lg:leading-6 hover:text-white transition-colors block max-w-67.5"
                         >
                           Career
                         </Link>
@@ -420,16 +420,16 @@ export default function Footer() {
                 </ul>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-[30px]">
-                <div className="grow shrink-0 basis-[330px] max-w-[330px]">
-                  <div className="mb-[15px]">
-                    <h6 className="text-white text-[14px] font-normal uppercase leading-[20px] m-0">
+              <div className="flex flex-col sm:flex-row gap-7.5">
+                <div className="grow shrink-0 basis-82.5 max-w-82.5">
+                  <div className="mb-3.75">
+                    <h6 className="text-white text-[14px] font-normal uppercase leading-5 m-0">
                       OUR OFFICE
                     </h6>
                   </div>
-                  <div className="flex flex-col gap-[15px]">
+                  <div className="flex flex-col gap-3.75">
                     <div>
-                      <div className="flex items-center gap-[5px] mb-[5px]">
+                      <div className="flex items-center gap-1.25 mb-1.25">
                         <Image
                           src="/images/footer/Flag-Indonesia.png"
                           alt="office-item-title"
@@ -437,17 +437,17 @@ export default function Footer() {
                           height={16}
                           className="w-6 h-auto"
                         />
-                        <h6 className="text-white font-light text-[16px] leading-[24px] m-0">
+                        <h6 className="text-white font-light text-[16px] leading-6 m-0">
                           Bandung HQ
                         </h6>
                       </div>
-                      <p className="text-white/70 text-[14px] lg:text-[16px] leading-[24px] m-0 font-light">
+                      <p className="text-white/70 text-[14px] lg:text-[16px] leading-6 m-0 font-light">
                         Jl. Lembong No.32, Braga, Kec. Sumur Bandung, Kota
                         Bandung, Jawa Barat 40111
                       </p>
                     </div>
                     <div>
-                      <div className="flex items-center gap-[5px] mb-[5px]">
+                      <div className="flex items-center gap-1.25 mb-1.25">
                         <Image
                           src="/images/footer/Flag-Indonesia.png"
                           alt="office-item-title"
@@ -455,17 +455,17 @@ export default function Footer() {
                           height={16}
                           className="w-6 h-auto"
                         />
-                        <h6 className="text-white font-light text-[14px] lg:text-[16px] leading-[24px] m-0">
+                        <h6 className="text-white font-light text-[14px] lg:text-[16px] leading-6 m-0">
                           Jakarta HQ
                         </h6>
                       </div>
-                      <p className="text-white/70 text-[14px] lg:text-[16px] leading-[24px] m-0 font-light">
+                      <p className="text-white/70 text-[14px] lg:text-[16px] leading-6 m-0 font-light">
                         Jl. Kemang Raya Selatan VIII No.55, Jakarta Selatan,
                         Indonesia
                       </p>
                     </div>
                     <div>
-                      <div className="flex items-center gap-[5px] mb-[5px]">
+                      <div className="flex items-center gap-1.25 mb-1.25">
                         <Image
                           src="/images/footer/Flag-Singapore.png"
                           alt="office-item-title"
@@ -473,11 +473,11 @@ export default function Footer() {
                           height={16}
                           className="w-6 h-auto"
                         />
-                        <h6 className="text-white font-light text-[14px] lg:text-[16px] leading-[24px] m-0">
+                        <h6 className="text-white font-light text-[14px] lg:text-[16px] leading-6 m-0">
                           Singapore HQ
                         </h6>
                       </div>
-                      <p className="text-white/70 text-[14px] lg:text-[16px] leading-[24px] m-0 font-light">
+                      <p className="text-white/70 text-[14px] lg:text-[16px] leading-6 m-0 font-light">
                         531A Upper Cross Street #04-95, Hong Lim Complex
                         Singapore 051531
                       </p>
@@ -486,16 +486,16 @@ export default function Footer() {
                 </div>
 
                 <div className="flex-1 hidden sm:block">
-                  <div className="mb-[15px]">
-                    <h6 className="text-white text-[14px] font-normal uppercase leading-[20px] m-0">
+                  <div className="mb-3.75">
+                    <h6 className="text-white text-[14px] font-normal uppercase leading-5 m-0">
                       CONTACT US
                     </h6>
                   </div>
-                  <div className="flex flex-col gap-[12px]">
+                  <div className="flex flex-col gap-3">
                     <div className="contact-item">
                       <a
                         href="https://api.whatsapp.com/send?phone=6281805757585"
-                        className="text-white/70 hover:text-white transition-colors text-[14px] lg:text-[16px] font-light leading-[24px]"
+                        className="text-white/70 hover:text-white transition-colors text-[14px] lg:text-[16px] font-light leading-6"
                       >
                         <span className="text-[#ffb14c] font-normal">P.</span>{" "}
                         +62818 0575 7585
@@ -504,7 +504,7 @@ export default function Footer() {
                     <div className="contact-item">
                       <a
                         href="mailto:hi@bolehdicoba.com"
-                        className="text-white/70 hover:text-white transition-colors text-[14px] lg:text-[16px] font-light leading-[24px]"
+                        className="text-white/70 hover:text-white transition-colors text-[14px] lg:text-[16px] font-light leading-6"
                       >
                         <span className="text-[#ffb14c] font-normal">E.</span>{" "}
                         hi@bolehdicoba.com
