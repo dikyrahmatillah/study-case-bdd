@@ -147,6 +147,220 @@ const menuData: MenuItem[] = [
   },
 ];
 
+const DesktopMenu = ({ menuData }: { menuData: MenuItem[] }) => (
+  <nav className="hidden lg:flex flex-1 justify-end">
+    <ul className="flex items-center gap-3 text-sm font-normal px-10">
+      {menuData.map((item) => (
+        <li
+          key={item.id}
+          className={`menu-item group flex items-center hover:text-gray-400 transition-colors cursor-pointer`}
+        >
+          <Link
+            href={item.href}
+            className="title px-2 py-3 text-black no-underline hover:text-gray-400 text-sm font-normal"
+          >
+            {item.title}
+          </Link>
+
+          {item.subMenu && (
+            <FaAngleDown
+              className="text-gray-500 w-3.5 h-3.5"
+              aria-hidden="true"
+            />
+          )}
+
+          {item.subMenu && (
+            <ul
+              className={`sub-menu ${item.subMenuMod || ""} hidden group-hover:flex absolute left-0 right-0 top-full z-30`}
+            >
+              <div className="mx-auto w-full  flex flex-row flex-wrap border-[0.5px] border-[#d9d4cb] bg-[#f7f5f0]">
+                {item.subMenu.map((subItem, index) => {
+                  const itemCount = item.subMenu!.length;
+                  let widthClass = "w-1/3";
+
+                  if (item.subMenuMod === "sub-menu-mod-2") {
+                    if (itemCount % 2 === 0 && index >= itemCount - 2) {
+                      widthClass = "w-1/2";
+                    }
+                  } else if (item.subMenuMod === "sub-menu-mod-1") {
+                    if (index === itemCount - 1) {
+                      widthClass = "w-full";
+                    }
+                  }
+
+                  return (
+                    <li
+                      key={subItem.id}
+                      className={`menu-item ${widthClass} p-[30px_50px] border-[0.5px] border-[#d9d4cb]`}
+                    >
+                      <div className="title text-[#222] text-xl font-medium mb-2.5">
+                        {subItem.title}
+                      </div>
+                      <div className="description text-[#222] text-base font-light leading-5.5 mb-5">
+                        {subItem.description}
+                      </div>
+                      <Link
+                        href={subItem.href}
+                        className="button_link text-[#33b8a5] text-base font-medium flex items-center gap-1.5 no-underline hover:gap-2 transition-all"
+                      >
+                        {subItem.buttonText}
+                        <svg
+                          className="w-4 h-4 -rotate-45 -mb-0.75"
+                          fill="currentColor"
+                          viewBox="0 0 448 512"
+                        >
+                          <path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z" />
+                        </svg>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </div>
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+);
+
+const MobileMenu = ({
+  isOpen,
+  toggleMenu,
+  menuData,
+  openSubMenu,
+  toggleSubMenu,
+}: {
+  isOpen: boolean;
+  toggleMenu: () => void;
+  menuData: MenuItem[];
+  openSubMenu: string | null;
+  toggleSubMenu: (id: string) => void;
+}) => (
+  <nav
+    className={`site-navigation-dropdown lg:hidden absolute top-full left-0 right-0 bg-white z-50 shadow-lg transition-all duration-300 overflow-hidden ${
+      isOpen
+        ? "opacity-100 translate-y-0 pointer-events-auto"
+        : "opacity-0 -translate-y-2 pointer-events-none"
+    }`}
+  >
+    <div className="flex items-center gap-3 px-4 py-4 border-b border-gray-200">
+      <div className="flex flex-1 items-center gap-3 border-2 border-gray-300 rounded-full px-6 py-3 bg-white">
+        <svg
+          className="w-6 h-6 text-gray-500 shrink-0"
+          fill="currentColor"
+          viewBox="0 0 512 512"
+        >
+          <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+        </svg>
+        <input
+          type="text"
+          placeholder="Masukkan kata kunci pencarian"
+          className="flex-1 text-base outline-none bg-transparent text-gray-700 placeholder-gray-400"
+        />
+      </div>
+      <button className="shrink-0 bg-[#4d7bc8] text-white text-base font-semibold px-6 py-3 rounded-full hover:bg-[#1c1c1c] transition-colors">
+        Cari sekarang
+      </button>
+    </div>
+
+    <ul className="menu-main-menu-container list-none p-0 m-0">
+      {menuData.map((item) => (
+        <li key={item.id} className="menu-item border-b border-gray-200">
+          <div className="flex items-center justify-between">
+            <Link
+              href={item.href}
+              className="flex-1 px-4 py-4 text-black no-underline text-[14px] font-normal"
+              onClick={(e) => {
+                if (item.subMenu) {
+                  e.preventDefault();
+                  toggleSubMenu(item.id);
+                } else {
+                  toggleMenu();
+                }
+              }}
+            >
+              {item.title}
+            </Link>
+            {item.subMenu && (
+              <span
+                className="px-4 py-5"
+                aria-hidden="true"
+                onClick={() => toggleSubMenu(item.id)}
+              >
+                <svg
+                  className={`w-4.5 h-4.5 transition-transform ${
+                    openSubMenu === item.id ? "rotate-180" : ""
+                  }`}
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
+            )}
+          </div>
+
+          {item.subMenu && openSubMenu === item.id && (
+            <ul className="sub-menu pl-6 pb-2 list-none">
+              {item.subMenu.map((subItem) => (
+                <li key={subItem.id} className="py-2">
+                  <Link
+                    href={subItem.href}
+                    className="text-sm text-gray-600 no-underline hover:text-black"
+                    onClick={toggleMenu}
+                  >
+                    {subItem.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <p className="menu-copyright text-left text-sm text-gray-500 px-4 py-5">
+      ©2026 Boleh Dicoba Digital All right reserved
+    </p>
+  </nav>
+);
+
+const SearchDropdown = ({ isOpen }: { isOpen: boolean }) => (
+  <div
+    className={`hidden md:block absolute top-full left-0 right-0 bg-white z-50 shadow-lg border-b border-gray-200 transition-all duration-300 overflow-hidden ${
+      isOpen
+        ? "opacity-100 translate-y-0 pointer-events-auto"
+        : "opacity-0 -translate-y-2 pointer-events-none"
+    }`}
+  >
+    <div className="flex items-center gap-4 px-11 py-7">
+      <div className="flex flex-1 items-center gap-4 border rounded-full px-4 py-3 bg-white">
+        <svg
+          className="w-6 h-6 text-black shrink-0"
+          fill="currentColor"
+          viewBox="0 0 512 512"
+        >
+          <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+        </svg>
+        <input
+          type="text"
+          placeholder="Masukkan kata kunci pencarian"
+          className="flex-1 text-[14px] outline-none bg-transparent text-gray-700 placeholder-gray-400"
+        />
+      </div>
+      <button className="shrink-0 bg-[#4d7bc8] text-white text-[14px] font-normal px-6 py-3 rounded-full hover:bg-[#1c1c1c] transition-colors">
+        Cari sekarang
+      </button>
+    </div>
+  </div>
+);
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
@@ -182,7 +396,7 @@ export default function Header() {
           scrolled ? "bg-white border-gray-200" : " border-transparent"
         }`}
       >
-        <div className="flex items-center pl-[3px]">
+        <div className="flex items-center pl-0.75">
           <div className="md:hidden">
             <button
               className="site-navigation-toggle cursor-pointer"
@@ -256,80 +470,8 @@ export default function Header() {
           </button>
         </div>
 
-        <nav className="hidden lg:flex flex-1 justify-end">
-          <ul className="flex items-center gap-3 text-sm font-normal px-10">
-            {menuData.map((item) => (
-              <li
-                key={item.id}
-                className={`menu-item group flex items-center hover:text-gray-400 transition-colors cursor-pointer`}
-              >
-                <Link
-                  href={item.href}
-                  className="title px-2 py-3 text-black no-underline hover:text-gray-400 text-sm font-normal"
-                >
-                  {item.title}
-                </Link>
+        <DesktopMenu menuData={menuData} />
 
-                {item.subMenu && (
-                  <FaAngleDown
-                    className="text-gray-500 w-3.5 h-3.5"
-                    aria-hidden="true"
-                  />
-                )}
-
-                {item.subMenu && (
-                  <ul
-                    className={`sub-menu ${item.subMenuMod || ""} hidden group-hover:flex absolute left-0 right-0 top-full z-30`}
-                  >
-                    <div className="mx-auto w-full  flex flex-row flex-wrap border-[0.5px] border-[#d9d4cb] bg-[#f7f5f0]">
-                      {item.subMenu.map((subItem, index) => {
-                        const itemCount = item.subMenu!.length;
-                        let widthClass = "w-1/3";
-
-                        if (item.subMenuMod === "sub-menu-mod-2") {
-                          if (itemCount % 2 === 0 && index >= itemCount - 2) {
-                            widthClass = "w-1/2";
-                          }
-                        } else if (item.subMenuMod === "sub-menu-mod-1") {
-                          if (index === itemCount - 1) {
-                            widthClass = "w-full";
-                          }
-                        }
-
-                        return (
-                          <li
-                            key={subItem.id}
-                            className={`menu-item ${widthClass} p-[30px_50px] border-[0.5px] border-[#d9d4cb]`}
-                          >
-                            <div className="title text-[#222] text-xl font-medium mb-2.5">
-                              {subItem.title}
-                            </div>
-                            <div className="description text-[#222] text-base font-light leading-5.5 mb-5">
-                              {subItem.description}
-                            </div>
-                            <Link
-                              href={subItem.href}
-                              className="button_link text-[#33b8a5] text-base font-medium flex items-center gap-1.5 no-underline hover:gap-2 transition-all"
-                            >
-                              {subItem.buttonText}
-                              <svg
-                                className="w-4 h-4 -rotate-45 -mb-0.75"
-                                fill="currentColor"
-                                viewBox="0 0 448 512"
-                              >
-                                <path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z" />
-                              </svg>
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </div>
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
         <div className="flex items-center gap-5 flex-1 md:flex-initial justify-end ml-auto lg:ml-0">
           <button
             className="hidden md:flex h-10 w-10 items-center justify-center text-[#222] hover:text-gray-500"
@@ -345,7 +487,7 @@ export default function Header() {
             href="https://api.whatsapp.com/send?phone=6281805757585&text=Halo%20saya%20tau%20BDD%20dari%20Website,%20mohon%20diinformasikan%20terkait%20servisnya%20ya"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-white bg-[#4d7bc8] border-2 border-[#222] py-[10px] px-[18px] lg:py-2.75 lg:px-4.5 rounded-lg text-[16px] lg:text-base font-bold gap-1 hover:bg-[#1c1c1c] transition-colors"
+            className="flex items-center text-white bg-[#4d7bc8] border-2 border-[#222] py-2.5 px-4.5 lg:py-2.75 lg:px-4.5 rounded-lg text-[16px] lg:text-base font-bold gap-1 hover:bg-[#1c1c1c] transition-colors"
           >
             <Image
               src="/images/32px-WhatsApp_icon.png"
@@ -359,149 +501,14 @@ export default function Header() {
         </div>
       </div>
 
-      <div
-        className={`hidden md:block absolute top-full left-0 right-0 bg-white z-50 shadow-lg border-b border-gray-200 transition-all duration-300 overflow-hidden ${
-          searchOpen
-            ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 -translate-y-2 pointer-events-none"
-        }`}
-      >
-        <div className="flex items-center gap-3 px-6 py-4">
-          <div className="flex flex-1 items-center gap-2 border border-gray-300 rounded-full px-4 py-2 bg-white">
-            <svg
-              className="w-4 h-4 text-gray-500 shrink-0"
-              fill="currentColor"
-              viewBox="0 0 512 512"
-            >
-              <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
-            </svg>
-            <input
-              type="text"
-              placeholder="Masukkan kata kunci pencarian"
-              className="flex-1 text-sm outline-none bg-transparent text-gray-700 placeholder-gray-400"
-            />
-          </div>
-          <button className="shrink-0 bg-[#4d7bc8] text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-[#1c1c1c] transition-colors">
-            Cari sekarang
-          </button>
-        </div>
-      </div>
-      <div
-        className={`hidden md:block absolute top-full left-0 right-0 bg-white z-50 shadow-lg border-b border-gray-200 transition-all duration-300 overflow-hidden ${
-          searchOpen
-            ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 -translate-y-2 pointer-events-none"
-        }`}
-      >
-        <div className="flex items-center gap-4 px-11 py-7">
-          <div className="flex flex-1 items-center gap-4 border rounded-full px-4 py-3 bg-white">
-            <svg
-              className="w-6 h-6 text-black shrink-0"
-              fill="currentColor"
-              viewBox="0 0 512 512"
-            >
-              <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
-            </svg>
-            <input
-              type="text"
-              placeholder="Masukkan kata kunci pencarian"
-              className="flex-1 text-[14px] outline-none bg-transparent text-gray-700 placeholder-gray-400"
-            />
-          </div>
-          <button className="shrink-0 bg-[#4d7bc8] text-white text-[14px] font-normal px-6 py-3 rounded-full hover:bg-[#1c1c1c] transition-colors">
-            Cari sekarang
-          </button>
-        </div>
-      </div>
-
-      <nav
-        className={`site-navigation-dropdown lg:hidden absolute top-full left-0 right-0 bg-white z-50 shadow-lg transition-all duration-300 overflow-hidden ${
-          mobileMenuOpen
-            ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 -translate-y-2 pointer-events-none"
-        }`}
-      >
-        <div className="flex items-center gap-3 px-4 py-4 border-b border-gray-200">
-          <div className="flex flex-1 items-center gap-3 border-2 border-gray-300 rounded-full px-6 py-3 bg-white">
-            <svg
-              className="w-6 h-6 text-gray-500 shrink-0"
-              fill="currentColor"
-              viewBox="0 0 512 512"
-            >
-              <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
-            </svg>
-            <input
-              type="text"
-              placeholder="Masukkan kata kunci pencarian"
-              className="flex-1 text-base outline-none bg-transparent text-gray-700 placeholder-gray-400"
-            />
-          </div>
-          <button className="shrink-0 bg-[#4d7bc8] text-white text-base font-semibold px-6 py-3 rounded-full hover:bg-[#1c1c1c] transition-colors">
-            Cari sekarang
-          </button>
-        </div>
-
-        <ul className="menu-main-menu-container list-none p-0 m-0">
-          {menuData.map((item) => (
-            <li key={item.id} className="menu-item border-b border-gray-200">
-              <div className="flex items-center justify-between">
-                <Link
-                  href={item.href}
-                  className="flex-1 px-4 py-4 text-black no-underline text-[14px] font-normal"
-                  onClick={(e) => {
-                    if (item.subMenu) {
-                      e.preventDefault();
-                      toggleSubMenu(item.id);
-                    } else {
-                      toggleMobileMenu();
-                    }
-                  }}
-                >
-                  {item.title}
-                </Link>
-                {item.subMenu && (
-                  <span className="px-4 py-5" aria-hidden="true">
-                    <svg
-                      className={`w-4.5 h-4.5 transition-transform ${
-                        openSubMenu === item.id ? "rotate-180" : ""
-                      }`}
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                )}
-              </div>
-
-              {item.subMenu && openSubMenu === item.id && (
-                <ul className="sub-menu pl-6 pb-2 list-none">
-                  {item.subMenu.map((subItem) => (
-                    <li key={subItem.id} className="py-2">
-                      <Link
-                        href={subItem.href}
-                        className="text-sm text-gray-600 no-underline hover:text-black"
-                        onClick={toggleMobileMenu}
-                      >
-                        {subItem.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        <p className="menu-copyright text-left text-sm text-gray-500 px-4 py-5">
-          ©2026 Boleh Dicoba Digital All right reserved
-        </p>
-      </nav>
+      <SearchDropdown isOpen={searchOpen} />
+      <MobileMenu
+        isOpen={mobileMenuOpen}
+        toggleMenu={toggleMobileMenu}
+        menuData={menuData}
+        openSubMenu={openSubMenu}
+        toggleSubMenu={toggleSubMenu}
+      />
     </header>
   );
 }

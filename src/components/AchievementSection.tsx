@@ -8,23 +8,23 @@ import "swiper/css/free-mode";
 
 const achievementImages = [
   {
-    src: "https://bolehdicoba.com/wp-content/uploads/2024/03/Group-40163.png",
+    src: "/images/achievement/Group-40163.png",
     alt: "partner-item",
   },
   {
-    src: "https://bolehdicoba.com/wp-content/uploads/2024/03/Group-40130.png",
+    src: "/images/achievement/Group-40130.png",
     alt: "partner-item",
   },
   {
-    src: "https://bolehdicoba.com/wp-content/uploads/2024/03/Group-40160.png",
+    src: "/images/achievement/Group-40160.png",
     alt: "partner-item",
   },
   {
-    src: "https://bolehdicoba.com/wp-content/uploads/2024/03/Group-40161.png",
+    src: "/images/achievement/Group-40161.png",
     alt: "partner-item",
   },
   {
-    src: "https://bolehdicoba.com/wp-content/uploads/2024/03/Group-40163-1.png",
+    src: "/images/achievement/Group-40163-1.png",
     alt: "partner-item",
   },
 ];
